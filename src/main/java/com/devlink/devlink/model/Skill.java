@@ -1,6 +1,6 @@
 package com.devlink.devlink.model;
 
-public class Skills {
+public class Skill {
 
     private Long id;
 
@@ -10,10 +10,10 @@ public class Skills {
 
     private String proficiencyLevel;
 
-    public Skills() {
+    public Skill() {
     }
 
-    public Skills(Long id, Long userId, String skillName, String proficiencyLevel){
+    public Skill(Long id, Long userId, String skillName, String proficiencyLevel){
         this.id = id;
         this.userId = userId;
         this.skillName = skillName;
@@ -50,5 +50,15 @@ public class Skills {
 
     public void setProficiencyLevel(String proficiencyLevel) {
         this.proficiencyLevel = proficiencyLevel;
+    }
+
+    @Override
+    public String toString() {
+        return "Skill{" +
+                "id=" + id +
+                ", userId=" + userId +
+                ", skillName='" + skillName + '\'' +
+                ", proficiencyLevel='" + proficiencyLevel + '\'' +
+                '}';
     }
 }
