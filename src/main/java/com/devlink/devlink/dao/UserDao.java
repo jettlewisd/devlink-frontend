@@ -17,12 +17,12 @@ public interface UserDao {
 
     boolean deleteUser(Long id);
 
+
     //BEYOND CRUD METHODS
     List<User> findUsersBySkill(String skillName);
 
     List<User> getUserConnections(Long userId);
 
     List<User> recommendConnections(Long userId);
-
 
 }
