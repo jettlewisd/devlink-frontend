@@ -14,5 +14,5 @@ public interface ProjectDao {
     boolean deleteProject(Long id);
 
     // Beyond CRUD Methods
-    List<Project> getProjectsByUserId(Long userId); // Retrieve projects created by a specific user
+    List<Project> getProjectsByCreator(Long createdBy); // Retrieve projects created by a specific user
 }

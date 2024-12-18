@@ -1,11 +1,11 @@
 package com.devlink.devlink.rowmapper;
 
-        import com.devlink.devlink.model.Project;
-        import org.springframework.jdbc.core.RowMapper;
+import com.devlink.devlink.model.Project;
+import org.springframework.jdbc.core.RowMapper;
 
-        import java.sql.ResultSet;
-        import java.sql.SQLException;
-        import java.time.LocalDate;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.time.LocalDate;
 
 /**
  * RowMapper implementation for mapping rows from the "projects" table
@@ -37,3 +37,4 @@ public class ProjectRowMapper implements RowMapper<Project> {
         return project;
     }
 }
+
