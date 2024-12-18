@@ -16,5 +16,3 @@ public interface PostDao {
     List<Post> getPostsByUserId(Long userId);
     List<Post> getAllPosts(); // Retrieve all posts in the system
 }
-
-}

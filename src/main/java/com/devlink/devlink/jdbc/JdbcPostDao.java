@@ -2,6 +2,7 @@ package com.devlink.devlink.jdbc;
 
 import com.devlink.devlink.dao.PostDao;
 import com.devlink.devlink.model.Post;
+import com.devlink.devlink.rowmapper.PostRowMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
@@ -20,31 +21,50 @@ public class JdbcPostDao implements PostDao {
 
     @Override
     public Long createPost(Post post) {
-        return null;
+        String sql = "INSERT INTO posts (user_id, content, createdAt) VALUES (?, ?, ?) RETURNING id";
+        return jdbcTemplate.queryForObject(
+                sql,
+                Long.class,
+                post.getUserId(),
+                post.getContent(),
+                post.getCreatedAt()
+        );
     }
 
     @Override
     public Post getPostById(Long id) {
-        return null;
+        String sql = "SELECT * FROM posts WHERE id =?";
+        return jdbcTemplate.queryForObject(sql, new PostRowMapper(), id);
     }
 
     @Override
     public boolean updatePost(Long id, Post post) {
-        return false;
+        String sql = "UPDATE posts SET content = ?, created_at = ? WHERE id = ?";
+        int rowsUpdated = jdbcTemplate.update(
+                sql,
+                post.getContent(),
+                post.getCreatedAt(),
+                id
+        );
+        return rowsUpdated > 0;
     }
 
     @Override
     public boolean deletePost(Long id) {
-        return false;
+        String sql = "DELETE FROM posts WHERE id = ?";
+        int rowsAffected = jdbcTemplate.update(sql, id);
+        return rowsAffected > 0;
     }
 
     @Override
     public List<Post> getPostsByUserId(Long userId) {
-        return null;
+        String sql = "SELECT * FROM posts WHERE user_id = ?";
+        return jdbcTemplate.query(sql, new PostRowMapper(), userId);
     }
 
     @Override
     public List<Post> getAllPosts() {
-        return null;
+        String sql = "SELECT * FROM posts";
+        return jdbcTemplate.query(sql, new PostRowMapper());
     }
 }
