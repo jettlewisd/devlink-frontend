@@ -39,7 +39,7 @@ public class JdbcSkillDao implements SkillDao {
 
     @Override
     public Long createSkill(Skill skill) {
-        String sql = "INSERT INTO skills (user_id, skill_name, proficiency_level) " + "VALUES (?, ?, ?, ?) RETURNING id";
+        String sql = "INSERT INTO skills (user_id, skill_name, proficiency_level) " + "VALUES (?, ?, ?) RETURNING id";
         return jdbcTemplate.queryForObject(
                 sql,
                 Long.class,

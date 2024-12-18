@@ -7,7 +7,7 @@ import java.util.List;
 public interface ProjectContributorDao {
 
     // CRUD OPS
-    Long addContributor(ProjectContributor projectContributor);
+    boolean addContributor(ProjectContributor projectContributor);
     ProjectContributor getContributorById(Long userId, Long projectId);
     boolean updateContributor(ProjectContributor projectContributor);
     boolean removeContributor(Long userId, Long projectId);

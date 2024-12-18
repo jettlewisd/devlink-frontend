@@ -7,24 +7,20 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 /**
- * RowMapper implementation for mapping rows from the "project_contributors" table
- * to ProjectContributor model objects.
+ * Maps rows from the `project_contributors` table to the ProjectContributor model.
  */
 public class ProjectContributorRowMapper implements RowMapper<ProjectContributor> {
 
-    /**
-     * Maps a single row of the "project_contributors" table to a ProjectContributor object.
-     *
-     * @param rs     The ResultSet containing the row data.
-     * @param rowNum The row number being processed.
-     * @return A ProjectContributor object populated with data from the current row.
-     * @throws SQLException If an SQL exception occurs while accessing the ResultSet.
-     */
     @Override
     public ProjectContributor mapRow(ResultSet rs, int rowNum) throws SQLException {
         ProjectContributor projectContributor = new ProjectContributor();
-        projectContributor.setProjectId(rs.getLong("project_id"));
+
         projectContributor.setUserId(rs.getLong("user_id"));
+        projectContributor.setProjectId(rs.getLong("project_id"));
+        projectContributor.setRole(rs.getString("role"));
+        projectContributor.setDateJoined(rs.getString("date_joined"));
+
         return projectContributor;
     }
 }
+

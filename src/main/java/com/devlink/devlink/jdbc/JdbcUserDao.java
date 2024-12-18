@@ -34,7 +34,7 @@ public class JdbcUserDao implements UserDao {
 
     @Override
     public Long createUser(User user) {
-        String sql = "INSERT INTO users (first_name, last_name, email, password) " + "VALUES (?, ?, ?, ?, ?) RETURNING id";
+        String sql = "INSERT INTO users (first_name, last_name, email, password) " + "VALUES (?, ?, ?, ?) RETURNING id";
         return jdbcTemplate.queryForObject(
                 sql,
                 Long.class,
