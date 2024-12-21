@@ -3,11 +3,9 @@ package com.devlink.devlink.controller;
 
 import com.devlink.devlink.dao.PostDao;
 import com.devlink.devlink.model.Post;
+import com.sun.source.tree.BreakTree;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -28,7 +26,30 @@ public class PostController {
     }
 
     @GetMapping
-    public List<Post> getAllPosts
+    public List<Post> getAllPosts() {
+        return postDao.getAllPosts();
+    }
+
+    @PostMapping
+    public Long createPost(@RequestBody Post post) {
+        return postDao.createPost(post);
+    }
+
+    @PutMapping("/{id}")
+    public boolean updatePost(@PathVariable Long id, @RequestBody Post post) {
+        return postDao.updatePost(id, post);
+    }
+
+    @DeleteMapping("/{id}")
+    public boolean deletePost(@PathVariable Long id) {
+        return postDao.deletePost(id);
+    }
+
+    @GetMapping("/users/{userId}")
+    public List<Post> getPostsByUserId(@PathVariable Long userId) {
+        return postDao.getPostsByUserId(userId);
+    }
+
 
 
 
