@@ -1,10 +1,11 @@
 package com.devlink.devlink.controller;
 
 import com.devlink.devlink.dao.ProjectDao;
+import com.devlink.devlink.model.Project;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/projects")
@@ -17,6 +18,55 @@ public class ProjectController {
         this.projectDao = projectDao;
     }
 
+    @GetMapping("/{id}")
+    public Project getProjectById(@PathVariable Long id) {
+        return projectDao.getProjectById(id);
+    }
+
     @GetMapping
-    public 
+    public List<Project> getAllProjects() {
+        return projectDao.getAllProjects();
+    }
+
+    @PostMapping
+    public Long createProject(@RequestBody Project project) {
+        return projectDao.createProject(project);
+    }
+
+    @PutMapping("/{id}")
+    public boolean updateProject(@PathVariable Long id, @RequestBody Project project) {
+        return projectDao.updateProject(id, project);
+    }
+
+    @DeleteMapping("/{id}")
+    public boolean deleteProject(@PathVariable Long id) {
+        return projectDao.deleteProject(id);
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
