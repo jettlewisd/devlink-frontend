@@ -49,9 +49,4 @@ public class PostController {
     public List<Post> getPostsByUserId(@PathVariable Long userId) {
         return postDao.getPostsByUserId(userId);
     }
-
-
-
-
-
 }
