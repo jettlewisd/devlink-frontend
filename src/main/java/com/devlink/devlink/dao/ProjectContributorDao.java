@@ -15,6 +15,5 @@ public interface ProjectContributorDao {
 
     // Additional Methods
     List<ProjectContributor> getContributorsByProjectId(Long projectId);
-    List<ProjectContributor> getProjectsByUserId(Long userId);
     boolean isUserContributing(Long userId, Long projectId);
 }
