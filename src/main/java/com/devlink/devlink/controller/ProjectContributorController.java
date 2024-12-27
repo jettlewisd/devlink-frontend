@@ -18,6 +18,7 @@ public class ProjectContributorController {
         this.projectContributorDao = projectContributorDao;
     }
 
+
     @GetMapping("/{user_id}/{project_id}")
     public ProjectContributor getContributorById(@PathVariable Long userId, @PathVariable Long projectId) {
         return projectContributorDao.getContributorById(userId, projectId);
@@ -28,22 +29,22 @@ public class ProjectContributorController {
         return projectContributorDao.addContributor(projectContributor);
     }
 
-    @PutMapping("/{id}")
+    @PutMapping
     public boolean updateContributor(@RequestBody ProjectContributor projectContributor) {
         return projectContributorDao.updateContributor(projectContributor);
     }
 
-    @DeleteMapping("/{user_id}/{}")
+    @DeleteMapping("/{user_id}/{project_id}")
     public boolean removeContributor(@PathVariable Long userId, @PathVariable Long projectId) {
         return projectContributorDao.removeContributor(userId, projectId);
     }
 
-    @GetMapping("/{projectId}")
+    @GetMapping("/projects/{project_id}")
     public List<ProjectContributor> getContributorsByProjectId(@PathVariable Long projectId) {
         return projectContributorDao.getContributorsByProjectId(projectId);
     }
 
-    @("/{user_id}/{}")
+    @GetMapping("/{user_id}/{project_id}")
    public boolean isUserContributing(@PathVariable Long userId, @PathVariable Long projectId) {
         return projectContributorDao.isUserContributing(userId, projectId);
    }
