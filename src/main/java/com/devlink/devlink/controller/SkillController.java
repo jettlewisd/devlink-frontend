@@ -18,15 +18,14 @@ public class SkillController {
         this.skillDao = skillDao;
     }
 
-
     @GetMapping("/{id}")
     public Skill getSkillById(@PathVariable Long id) {
         return skillDao.getSkillById(id);
     }
 
-    @GetMapping("/user_id")
-    public List<Skill> getSkillsByUserId(@PathVariable Long userId) {
-        return skillDao.getSkillsByUserId(userId);
+    @GetMapping("/users/{user_id}")
+    public List<Skill> getSkillsByUserId(@PathVariable Long user_id) {
+        return skillDao.getSkillsByUserId(user_id);
     }
 
     @GetMapping
@@ -47,5 +46,15 @@ public class SkillController {
     @DeleteMapping("/{id}")
     public boolean deleteSkill(@PathVariable Long id) {
         return skillDao.deleteSkill(id);
+    }
+
+    @GetMapping("/proficiency/{proficiency_level}")
+    public List<Skill> findSkillsByProficiency(@PathVariable String proficiency_level) {
+        return skillDao.findSkillsByProficiency(proficiency_level);
+    }
+
+    @GetMapping("/users/{user_id}/skills/{skill_name}")
+    public boolean userHasSkill(@PathVariable Long user_id, @PathVariable String skill_name) {
+        return skillDao.userHasSkill(user_id, skill_name);
     }
 }

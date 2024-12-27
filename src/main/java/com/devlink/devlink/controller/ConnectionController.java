@@ -24,9 +24,9 @@ public class ConnectionController {
         return connectionDao.getAllConnections();
     }
 
-    @GetMapping("/{userId}/{connectedUserId}")
-    public Connection getConnection(@PathVariable Long userId, @PathVariable Long connectedUserId){
-        return connectionDao.getConnection(userId, connectedUserId);
+    @GetMapping("/{user_id}/{connected_user_id}")
+    public Connection getConnection(@PathVariable Long user_id, @PathVariable Long connected_user_id){
+        return connectionDao.getConnection(user_id, connected_user_id);
     }
 
     @PostMapping
@@ -34,14 +34,14 @@ public class ConnectionController {
         return connectionDao.createConnection(connection);
     }
 
-    @DeleteMapping("/{userId}/{connectedUserId}")
-    public boolean removeConnection(@PathVariable Long userId, @PathVariable Long connectedUserId) {
-        return connectionDao.removeConnection(userId, connectedUserId);
+    @DeleteMapping("/{user_id}/{connected_user_id}")
+    public boolean removeConnection(@PathVariable Long user_id, @PathVariable Long connected_user_id) {
+        return connectionDao.removeConnection(user_id, connected_user_id);
     }
 
-    @GetMapping("/user/{userId}")
-    public List<Connection> getConnectionsByUserId(@PathVariable Long userId){
-        return connectionDao.getConnectionsByUserId(userId);
+    @GetMapping("/user/{user_id}")
+    public List<Connection> getConnectionsByUserId(@PathVariable Long user_id){
+        return connectionDao.getConnectionsByUserId(user_id);
     }
 
 }

@@ -20,32 +20,32 @@ public class ProjectContributorController {
 
 
     @GetMapping("/{user_id}/{project_id}")
-    public ProjectContributor getContributorById(@PathVariable Long userId, @PathVariable Long projectId) {
-        return projectContributorDao.getContributorById(userId, projectId);
+    public ProjectContributor getContributorById(@PathVariable Long user_id, @PathVariable Long project_id) {
+        return projectContributorDao.getContributorById(user_id, project_id);
     }
 
     @PostMapping
-    public boolean addContributor(@RequestBody ProjectContributor projectContributor) {
-        return projectContributorDao.addContributor(projectContributor);
+    public boolean addContributor(@RequestBody ProjectContributor project_contributor) {
+        return projectContributorDao.addContributor(project_contributor);
     }
 
     @PutMapping
-    public boolean updateContributor(@RequestBody ProjectContributor projectContributor) {
-        return projectContributorDao.updateContributor(projectContributor);
+    public boolean updateContributor(@RequestBody ProjectContributor project_contributor) {
+        return projectContributorDao.updateContributor(project_contributor);
     }
 
     @DeleteMapping("/{user_id}/{project_id}")
-    public boolean removeContributor(@PathVariable Long userId, @PathVariable Long projectId) {
-        return projectContributorDao.removeContributor(userId, projectId);
+    public boolean removeContributor(@PathVariable Long user_id, @PathVariable Long project_id) {
+        return projectContributorDao.removeContributor(user_id, project_id);
     }
 
     @GetMapping("/projects/{project_id}")
-    public List<ProjectContributor> getContributorsByProjectId(@PathVariable Long projectId) {
-        return projectContributorDao.getContributorsByProjectId(projectId);
+    public List<ProjectContributor> getContributorsByProjectId(@PathVariable Long project_id) {
+        return projectContributorDao.getContributorsByProjectId(project_id);
     }
 
     @GetMapping("/{user_id}/{project_id}")
-   public boolean isUserContributing(@PathVariable Long userId, @PathVariable Long projectId) {
-        return projectContributorDao.isUserContributing(userId, projectId);
+   public boolean isUserContributing(@PathVariable Long user_id, @PathVariable Long project_id) {
+        return projectContributorDao.isUserContributing(user_id, project_id);
    }
 }

@@ -21,8 +21,8 @@ public interface UserDao {
     //BEYOND CRUD METHODS
     List<User> findUsersBySkill(String skillName);
 
-    List<User> getUserConnections(Long userId);
+    List<User> getConnectionsForUser(Long userId);
 
-    List<User> recommendConnections(Long userId);
+    List<User> getRecommendedConnectionsForUser(Long userId);
 
 }

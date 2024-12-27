@@ -45,18 +45,18 @@ public class UserController {
         return userDao.deleteUser(id);
     }
 
-    @GetMapping("/skills/{skillname}")
-    public List<User> findUsersBySkill(@PathVariable String skillName){
-        return userDao.findUsersBySkill(skillName);
+    @GetMapping("/skills/{skill_name}")
+    public List<User> findUsersBySkill(@PathVariable String skill_name){
+        return userDao.findUsersBySkill(skill_name);
     }
 
     @GetMapping("/{id}/connections")
-    public List<User> getUserConnections(@PathVariable Long id) {
-        return userDao.getUserConnections(id);
+    public List<User> getConnectionsForUser(@PathVariable Long id) {
+        return userDao.getConnectionsForUser(id);
     }
 
-    @GetMapping("/{userId}/recommendations")
-    public List<User> recommendConnections(@PathVariable Long userId) {
-        return userDao.recommendConnections(userId);
+    @GetMapping("/{id}/recommendations")
+    public List<User> getRecommendedConnectionsForUser(@PathVariable Long id) {
+        return userDao.getRecommendedConnectionsForUser(id);
     }
 }

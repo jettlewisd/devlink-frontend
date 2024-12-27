@@ -45,8 +45,8 @@ public class PostController {
         return postDao.deletePost(id);
     }
 
-    @GetMapping("/users/{userId}")
-    public List<Post> getPostsByUserId(@PathVariable Long userId) {
-        return postDao.getPostsByUserId(userId);
+    @GetMapping("/users/{user_id}")
+    public List<Post> getPostsByUserId(@PathVariable Long user_id) {
+        return postDao.getPostsByUserId(user_id);
     }
 }

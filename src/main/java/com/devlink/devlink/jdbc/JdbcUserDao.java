@@ -78,7 +78,7 @@ public class JdbcUserDao implements UserDao {
 
     // Get User Connections (non-CRUD method)
     @Override
-    public List<User> getUserConnections(Long userId) {
+    public List<User> getConnectionsForUser(Long userId) {
         String sql = "SELECT u.id, u.first_name, u.last_name, u.email, u.password " +
                 "FROM users u " +
                 "JOIN connections c ON u.id = c.connected_user_id " +
@@ -88,7 +88,7 @@ public class JdbcUserDao implements UserDao {
 
     // Recommend Connections (non-CRUD method)
     @Override
-    public List<User> recommendConnections(Long userId) {
+    public List<User> getRecommendedConnectionsForUser(Long userId) {
         String sql = "SELECT DISTINCT u.id, u.first_name, u.last_name, u.email, u.password " +
                 "FROM users u " +
                 "JOIN connections c1 ON u.id = c1.connected_user_id " +

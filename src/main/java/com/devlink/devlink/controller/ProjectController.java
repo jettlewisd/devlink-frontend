@@ -43,30 +43,4 @@ public class ProjectController {
         return projectDao.deleteProject(id);
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
