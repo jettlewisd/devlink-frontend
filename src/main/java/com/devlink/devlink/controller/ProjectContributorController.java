@@ -39,12 +39,12 @@ public class ProjectContributorController {
         return projectContributorDao.removeContributor(user_id, project_id);
     }
 
-    @GetMapping("/projects/{project_id}")
+    @GetMapping("/projects/{project_id}/contributors")
     public List<ProjectContributor> getContributorsByProjectId(@PathVariable Long project_id) {
         return projectContributorDao.getContributorsByProjectId(project_id);
     }
 
-    @GetMapping("/{user_id}/{project_id}")
+    @GetMapping("/{user_id}/{project_id}/status")
    public boolean isUserContributing(@PathVariable Long user_id, @PathVariable Long project_id) {
         return projectContributorDao.isUserContributing(user_id, project_id);
    }

@@ -48,7 +48,7 @@ public class SkillController {
         return skillDao.deleteSkill(id);
     }
 
-    @GetMapping("/proficiency/{proficiency_level}")
+    @GetMapping("/filter/proficiency/{proficiency_level}")
     public List<Skill> findSkillsByProficiency(@PathVariable String proficiency_level) {
         return skillDao.findSkillsByProficiency(proficiency_level);
     }

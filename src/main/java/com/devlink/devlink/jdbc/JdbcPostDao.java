@@ -21,7 +21,7 @@ public class JdbcPostDao implements PostDao {
 
     @Override
     public Long createPost(Post post) {
-        String sql = "INSERT INTO posts (user_id, content, createdAt) VALUES (?, ?, ?) RETURNING id";
+        String sql = "INSERT INTO posts (user_id, content, created_at) VALUES (?, ?, ?) RETURNING id";
         return jdbcTemplate.queryForObject(
                 sql,
                 Long.class,

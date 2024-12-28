@@ -43,5 +43,4 @@ public class ConnectionController {
     public List<Connection> getConnectionsByUserId(@PathVariable Long user_id){
         return connectionDao.getConnectionsByUserId(user_id);
     }
-
 }
