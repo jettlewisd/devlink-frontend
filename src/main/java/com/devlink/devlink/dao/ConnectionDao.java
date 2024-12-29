@@ -7,7 +7,7 @@ public interface ConnectionDao {
 
     // CRUD OPS
     Connection getConnection(Long userId, Long connectedUserId);
-    List<Connection> getAllConnections();
+    List<Connection> getAllConnections(); 
     boolean createConnection(Connection connection);
     boolean removeConnection(Long userId, Long connectedUserId);
 
