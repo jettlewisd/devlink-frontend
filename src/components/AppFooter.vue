@@ -11,7 +11,7 @@
           <li><a href="/contact">Contact</a></li>
         </ul>
       </nav>
-      
+
     </div>
   </footer>
   </template>
@@ -37,7 +37,7 @@
     gap: 1rem;
   }
   
-  .footer-links {
+  .footer-nav ul {
     list-style: none;
     padding: 0;
     margin: 0;
@@ -45,14 +45,14 @@
     gap: 1.5rem;
   }
   
-  .footer-links a {
+  .footer-nav a {
     text-decoration: none;
     color: #ccc;
     font-size: 0.875rem;
     transition: color 0.3s;
   }
   
-  .footer-links a:hover {
+  .footer-nav a:hover {
     color: #fff;
   }
   
