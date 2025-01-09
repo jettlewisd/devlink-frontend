@@ -2,8 +2,8 @@
     <div>
       <AppHeader />
       <main>
-        <h1>Login</h1>
-        <LoginForm />
+        <h1>Page Not Found</h1>
+        <NotFoundMessage />
       </main>
       <AppFooter />
     </div>
@@ -12,11 +12,11 @@
   <script>
   import AppHeader from "@/components/AppHeader.vue";
   import AppFooter from "@/components/AppFooter.vue";
-  import LoginForm from "@/components/LoginForm.vue";
+  import NotFoundMessage from "@/components/NotFoundMessage.vue";
   
   export default {
-    name: "LoginView",
-    components: { AppHeader, AppFooter, LoginForm },
+    name: "404View",
+    components: { AppHeader, AppFooter, NotFoundMessage },
   };
   </script>
   

@@ -4,7 +4,8 @@
 
       <main>
         <h1>Connections</h1>
-        <!-- Here you can add logic to display list of connections, buttons to add connections, etc. -->
+        <ConnectionsList /> <!-- Placeholder for ConnectionsList component -->
+        <ConnectionRequestForm /> <!-- Placeholder for ConnectionRequestForm component -->
       </main>
       
       <AppFooter />
@@ -14,12 +15,16 @@
   <script>
   import AppHeader from '@/components/AppHeader.vue';
   import AppFooter from '@/components/AppFooter.vue';
+  import ConnectionsList from '@/components/ConnectionsList.vue';
+  import ConnectionRequestForm from '@/components/ConnectionRequestForm.vue';
   
   export default {
     name: 'ConnectionsView',
     components: {
       AppHeader,
       AppFooter,
+      ConnectionsList,
+      ConnectionRequestForm,
     },
   };
   </script>
