@@ -6,9 +6,9 @@
 
       <nav class="footer-nav" aria-label="Footer Navigation">
         <ul>
-          <li><a href="/terms">Terms of Service</a></li>
-          <li><a href="/privacy">Privacy Policy</a></li>
-          <li><a href="/contact">Contact</a></li>
+          <li><router-link to="/terms">Terms of Service</router-link></li>
+          <li><router-link to="/privacy">Privacy Policy</router-link></li>
+          <li><router-link to="/contact">Contact</router-link></li>
         </ul>
       </nav>
 
