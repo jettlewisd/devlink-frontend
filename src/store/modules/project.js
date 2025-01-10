@@ -1,4 +1,4 @@
-import axios from '@/api'; //import axios instance from api.js 
+import api from '@/api'; //import axios instance from api.js 
 
 const state = {
     projects: [],  // this array will store the lists of projects
@@ -11,7 +11,7 @@ const getters = {
 const actions = {
     async fetchProjects({ commit }) {
         try {
-            const response = await api.get('/api/projects');  // API call to fetch projects
+            const response = await api.get('/projects');  // API call to fetch projects
             commit('setProjects', response.data);  // commit the data to the store 
         } catch (error) {
             console.error("Error fetching projects:", error);  // handle any errors during the request
@@ -26,6 +26,7 @@ const mutations = {
 };
 
 export default {
+    namespaced: true,
     state, 
     getters,
     actions,
