@@ -22,7 +22,7 @@ const actions = {
 const mutations = {
     setProjects(state, projects) {
         state.projects = projects;  // Set the projects in the state 
-    },
+    },()
 };
 
 export default {
