@@ -13,8 +13,8 @@ const actions = {
         try {
             const response = await api.get('/project_contributors');
             commit('setProjectContributors', response.data);
-        } catch (erorr) {
-            console.error("Error fetching project contributors:" error);
+        } catch (error) {
+            console.error("Error fetching project contributors:", error);
         }
     },
 };
