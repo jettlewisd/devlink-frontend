@@ -75,10 +75,8 @@ export default {
     margin-bottom: 20px;
 }
 
-/* Style for each ProjectCard component inside the list */
-.project-card {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+.project-item:hover {
+    background-color: #f9f9f9;
+    cursor: pointer;
 }
 </style>
