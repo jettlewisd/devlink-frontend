@@ -31,6 +31,10 @@ export default {
     name: 'ProjectList',
 
     components: {
+        ProjectCard, // Register the ProjectCard component
+    },
+
+    computed: {
         // Map projects state from Vuex store to the component’s data
         ...mapState({
             projects: state => state.project.projects, // Assuming the projects are stored in state.project.projects
