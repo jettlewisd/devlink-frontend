@@ -10,8 +10,8 @@ import post from './modules/post';
 
 export default createStore({
     modules: {
-        project,  // register the project module 
-        user,
+        project,  // register the project module, etc:
+        user, // "" etc
         projectContributor,
         skill,
         post,
