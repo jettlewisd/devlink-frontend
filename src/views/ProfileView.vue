@@ -17,22 +17,12 @@
   <script>
   import AppHeader from '../components/AppHeader.vue';
   import AppFooter from '../components/AppFooter.vue';
-  import UserProfileInfo from '../components/UserProfileInfo.vue';
-  import UserSkills from '../components/UserSkills.vue';
-  import UserProjects from '../components/UserProjects.vue';
-  import UserConnections from '../components/UserConnections.vue';
-  import UserPosts from '../components/UserPosts.vue';
   
   export default {
     name: 'ProfileView',
     components: {
       AppHeader,
       AppFooter,
-      UserProfileInfo,
-      UserSkills,
-      UserProjects,
-      UserConnections,
-      UserPosts,
     },
   };
   </script>

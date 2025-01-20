@@ -15,16 +15,12 @@
   <script>
   import AppHeader from '@/components/AppHeader.vue';
   import AppFooter from '@/components/AppFooter.vue';
-  import ConnectionsList from '@/components/ConnectionsList.vue';
-  import ConnectionRequestForm from '@/components/ConnectionRequestForm.vue';
   
   export default {
     name: 'ConnectionsView',
     components: {
       AppHeader,
       AppFooter,
-      ConnectionsList,
-      ConnectionRequestForm,
     },
   };
   </script>

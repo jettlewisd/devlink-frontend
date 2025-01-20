@@ -3,7 +3,6 @@ import { createRouter, createWebHistory } from 'vue-router';
 import HomeView from '@/views/HomeView.vue';
 import ProfileView from '@/views/ProfileView.vue';
 import ProjectsView from '@/views/ProjectsView.vue';
-import ProjectDetailView from '@/views/ProjectDetailView.vue';
 import ConnectionsView from '@/views/ConnectionsView.vue';
 import SkillsView from '@/views/SkillsView.vue';
 import PostsView from '@/views/PostsView.vue';
@@ -15,7 +14,6 @@ const routes = [
   { path: '/', name: 'home', component: HomeView },
   { path: '/profile/:id', name: 'profile', component: ProfileView },
   { path: '/projects', name: 'projects', component: ProjectsView },
-  { path: '/projects/:id', name: 'project-detail', component: ProjectDetailView },
   { path: '/connections', name: 'connections', component: ConnectionsView },
   { path: '/skills', name: 'skills', component: SkillsView },
   { path: '/posts', name: 'posts', component: PostsView },

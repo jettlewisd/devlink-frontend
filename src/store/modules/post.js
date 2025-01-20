@@ -2,6 +2,7 @@ import api from "@/api";
 
 const state = {
     posts: [],
+    loading: false, // Add a loading state
 };
 
 const getters = {

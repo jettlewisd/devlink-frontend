@@ -2,6 +2,7 @@ import api from '@/api'; //import axios instance from api.js
 
 const state = {
     projects: [],  // this array will store the lists of projects
+    loading: false, // Add a loading state
 };
 
 const getters = {

@@ -2,6 +2,7 @@ import api from '@/api'; //import axios instance from api.js
 
 const state = {
     users: [], 
+    loading: false, // Add a loading state
 };
 
 const getters = {

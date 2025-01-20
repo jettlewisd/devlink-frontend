@@ -1,82 +1,81 @@
 <template>
     <div class="project-list">
-
-        <!-- Check if there are any projects; if none, display a message -->
-        <h2 class="list-title">Projects</h2>
-        <div v-if="projects.length === 0" class="no-projects">
-            <p>No projects available.</p>
-        </div>
-
-         <!-- Render the ProjectCard component for each project in the projects array -->
-        <div v-else>
-            <div v-for="project in projects" :key="project.id" class="project-item">
-                <!-- Pass each project object as a prop to ProjectCard -->
-                 <ProjectCard
-                 :project="project"
-                 @view-details="handleViewDetails"
-                 />
-            </div>
-        </div>
+      <h2>Projects</h2>
+  
+      <!-- Check if there are projects to display -->
+      <div v-if="projects.length > 0">
+        <!-- Loop through each project and display a ProjectCard -->
+        <ProjectCard
+          v-for="project in projects"
+          :key="project.id"
+          :project="project"
+          @view-details="handleViewDetails"
+        />
+      </div>
+  
+      <!-- Show a message if there are no projects -->
+      <div v-else class="no-projects">
+        <p>No projects to display.</p>
+      </div>
     </div>
-</template>
-
-
-
-<script>
-import { mapState } from 'vuex'; // To map the Vuex store state to component data
-import ProjectCard from "@/components/ProjectCard"; // Import the ProjectCard component
-
-export default {
-
-    name: 'ProjectList',
-
+  </template>
+  
+  <script>
+  import ProjectCard from "./ProjectCard.vue";
+  
+  export default {
+    name: "ProjectList",
+  
     components: {
-        ProjectCard, // Register the ProjectCard component
+      ProjectCard,
     },
-
-    computed: {
-        // Map projects state from Vuex store to the component’s data
-        ...mapState({
-            projects: state => state.project.projects, // Assuming the projects are stored in state.project.projects
-        })
+  
+    props: {
+      projects: {
+        type: Array, // The prop expects an array of projects
+        required: true, // It's mandatory for the parent to pass this prop
+      },
     },
-
+  
     methods: {
-        handleViewDetails(projectId) {
-            // Handle the event emitted by ProjectCard when the "View Details" button is clicked
-            console.log("View details for project with ID:", projectId);
-            // You can add routing logic here if you want to navigate to a project detail page view 
-            this.$router.push({ name:'ProjectDetail', params: { id: projectId } });
-        },
+      handleViewDetails(projectId) {
+        // Emits a custom event with the ID of the selected project
+        this.$emit("view-project-details", projectId);
+      },
     },
-    
-};
-</script>
-
-
-
-<style scoped>
-.project-list {
-    padding: 20px;
-}
-
-.list-title {
-    font-size: 2rem;
-    margin-bottom: 20px;
-}
-
-.no-projects {
-    text-align: center;
-    font-size: 1.2rem;
-    color: #555;
-}
-
-.project-item {
-    margin-bottom: 20px;
-}
-
-.project-item:hover {
-    background-color: #f9f9f9;
-    cursor: pointer;
-}
-</style>
+  };
+  </script>
+  
+  <style scoped>
+  /* -------------------------
+     Project List Container
+     ------------------------- */
+  .project-list {
+    margin: 16px 0; /* Adds spacing around the component */
+    padding: 16px; /* Adds padding inside the container */
+    border: 1px solid #ddd; /* Adds a light border */
+    border-radius: 8px; /* Rounds the corners */
+    background-color: #f9f9f9; /* Light gray background for distinction */
+  }
+  
+  /* -------------------------
+     Heading Styling
+     ------------------------- */
+  .project-list h2 {
+    font-size: 1.8rem; /* Larger font size for prominence */
+    color: #333; /* Dark gray for readability */
+    margin-bottom: 16px; /* Adds spacing below the heading */
+    text-align: center; /* Centers the heading */
+  }
+  
+  /* -------------------------
+     No Projects Message
+     ------------------------- */
+  .no-projects {
+    text-align: center; /* Centers the message text */
+    color: #777; /* Light gray text for subtle emphasis */
+    font-size: 1rem; /* Standard font size */
+    margin-top: 16px; /* Adds spacing above the message */
+  }
+  </style>
+  

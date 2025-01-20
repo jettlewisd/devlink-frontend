@@ -2,6 +2,7 @@ import api from "@/api";
 
 const state = {
     projectContributors: [],
+    loading: false, // Add a loading state
 };
 
 const getters = {

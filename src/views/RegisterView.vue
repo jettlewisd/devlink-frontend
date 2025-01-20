@@ -12,11 +12,10 @@
   <script>
   import AppHeader from "@/components/AppHeader.vue";
   import AppFooter from "@/components/AppFooter.vue";
-  import RegisterForm from "@/components/RegisterForm.vue";
   
   export default {
     name: "RegisterView",
-    components: { AppHeader, AppFooter, RegisterForm },
+    components: { AppHeader, AppFooter, },
   };
   </script>
   

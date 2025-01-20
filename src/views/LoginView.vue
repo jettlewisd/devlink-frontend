@@ -12,11 +12,10 @@
   <script>
   import AppHeader from "@/components/AppHeader.vue";
   import AppFooter from "@/components/AppFooter.vue";
-  import LoginForm from "@/components/LoginForm.vue";
   
   export default {
     name: "LoginView",
-    components: { AppHeader, AppFooter, LoginForm },
+    components: { AppHeader, AppFooter, },
   };
   </script>
   

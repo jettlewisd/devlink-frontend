@@ -2,6 +2,7 @@ import api from "@/api";
 
 const state = {
     connections: [],
+    loading: false, // Add a loading state
 };
 
 const getters = {

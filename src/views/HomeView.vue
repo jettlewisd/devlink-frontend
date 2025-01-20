@@ -23,8 +23,6 @@
 import AppHeader from '../components/AppHeader.vue';
 import AppFooter from '../components/AppFooter.vue';
 import ProjectList from '../components/ProjectList';
-import UserList from '../components/UserList';
-import SkillsSummary from '../SkillsSummary';
 
 export default {
     name: 'HomeView',
@@ -32,8 +30,6 @@ export default {
         AppHeader,
         AppFooter,
         ProjectList,
-        UserList,
-        SkillsSummary,
     },
 };
 </script>
