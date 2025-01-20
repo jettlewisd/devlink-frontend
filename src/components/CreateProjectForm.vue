@@ -4,6 +4,7 @@
     </div>
 
     <!-- project name input -->
+     <label for="projectName">Project Name</label>
 
 
     <!-- project description input -->
