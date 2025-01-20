@@ -42,7 +42,6 @@
 
 <script>
 export default {
-
     name: "CreateProjectForm",
 
     data() {
@@ -56,32 +55,30 @@ export default {
 
     methods: {
         submitProject() {
-            // Basic validation for required fields
-            if (this.projectName.trim() === "") {
-                alert("Please enter a project name.");
-                return;
-            }
-            if (this.projectDescription.trim() === "") {
-                alert("Please enter a project description.");
+            // Validate the form input
+            if (this.projectName.trim() === "" || this.projectDescription.trim() === "") {
+                alert("Please fill out all fields.");
                 return;
             }
 
-            // Emit the project details to the parent component
-            this.$emit("create-project", {
-                projectName: this.projectName,
-                projectDescription: this.projectDescription,
+            // Create a new project object with the data
+            const newProject = {
+                name: this.projectName,
+                description: this.projectDescription,
                 startDate: this.startDate,
                 endDate: this.endDate,
-            });
+            };
 
-            // Reset the form after submission
+            // Dispatch the action to Vuex to add the project
+            this.$store.dispatch("project/addProject", newProject);
+
+            // Reset form fields after submission
             this.projectName = "";
             this.projectDescription = "";
             this.startDate = "";
             this.endDate = "";
         },
     },
-
 };
 </script>
 
