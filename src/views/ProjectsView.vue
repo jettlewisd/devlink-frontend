@@ -1,43 +1,79 @@
 <template>
   <div class="projects-view">
-    <AppHeader /> <!-- Include the AppHeader -->
+    <h1>Projects</h1>
 
-    <!-- Add a section to show all projects -->
-    <h2>Projects</h2>
-    <!-- Show a message if no projects are available -->
-    <ProjectList /> <!-- The ProjectList component will display the projects -->
+    <!-- Button to toggle the Create Project form -->
+    <button @click="toggleCreateForm" class="create-project-btn">
+      Create Project
+    </button>
 
-    <AppFooter /> <!-- Include the AppFooter -->
+    <!-- Conditionally render the CreateProjectForm -->
+    <CreateProjectForm v-if="isCreateFormVisible" />
+
+    <!-- Pass 'projects' to the ProjectList component -->
+    <ProjectList :projects="projects" @view-project-details="handleViewDetails" />
   </div>
 </template>
 
 <script>
-// Import the components and the store
-import AppHeader from '@/components/AppHeader.vue';
-import AppFooter from '@/components/AppFooter.vue';
-import ProjectList from '@/components/ProjectList.vue';
-import { mapActions } from 'vuex'; // mapActions to dispatch actions
+import ProjectList from "@/components/ProjectList.vue";
+import CreateProjectForm from "@/components/CreateProjectForm.vue";
 
 export default {
-  name: 'ProjectsView',
-  
+  name: "ProjectsView",
   components: {
-    AppHeader,
-    AppFooter,
     ProjectList,
+    CreateProjectForm
   },
-
-  created() {
-    // Dispatch the action to fetch projects when the component is created
-    this.fetchProjects();
+  data() {
+    return {
+      isCreateFormVisible: false,  // Toggle the visibility of the create project form
+    };
   },
-
+  computed: {
+    projects() {
+      return this.$store.state.project.projects;  // Get the list of projects from Vuex store
+    },
+  },
+  mounted() {
+    this.$store.dispatch("project/fetchProjects");  // Fetch projects on component mount
+  },
   methods: {
-    ...mapActions('projects', ['fetchProjects']), // Map the fetchProjects action from the store
+    toggleCreateForm() {
+      this.isCreateFormVisible = !this.isCreateFormVisible;  // Toggle the create project form
+    },
+    handleViewDetails(projectId) {
+      // Handle the view details action (you can implement this based on your app flow)
+      this.$router.push({ name: "projectDetails", params: { id: projectId } });
+    },
   },
 };
 </script>
 
 <style scoped>
-/* You can add specific styles here if needed */
+.projects-view {
+  padding: 16px;
+  background-color: #f4f4f4;
+}
+
+.create-project-btn {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.create-project-btn:hover {
+  background-color: #0056b3;
+}
+
+h1 {
+  font-size: 2rem;
+  color: #333;
+  text-align: center;
+  margin-bottom: 20px;
+}
 </style>
