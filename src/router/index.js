@@ -18,8 +18,8 @@ const routes = [
   { path: '/skills', name: 'skills', component: SkillsView },
   { path: '/posts', name: 'posts', component: PostsView },
   { path: '/login', name: 'login', component: LoginView },
-  { path: '/register', mame: 'register', components: RegisterView },
-  { path: '/:pathMatch(.*)*', name: 'not-found', components: NotFoundView },
+  { path: '/register', name: 'register', component: RegisterView },
+  { path: '/:pathMatch(.*)*', name: 'not-found', component: NotFoundView },
 ];
 
 const router = createRouter({
