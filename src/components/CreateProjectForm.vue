@@ -70,7 +70,7 @@ export default {
             };
 
             // Dispatch the action to Vuex to add the project
-            this.$store.dispatch("project/addProject", newProject);
+            this.$store.dispatch("project/createProject", newProject);
 
             // Reset form fields after submission
             this.projectName = "";

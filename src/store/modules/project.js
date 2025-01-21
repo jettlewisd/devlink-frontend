@@ -41,6 +41,7 @@ const actions = {
     // Create a new project
     async createProject({ dispatch }, project) {
         try {
+            console.log('Creating project with data:', project);  // Debugging line to see the data format
             await ProjectService.createProject(project);
             await dispatch('fetchProjects'); // Refresh the project list after creation
         } catch (error) {
