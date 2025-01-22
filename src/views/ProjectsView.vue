@@ -1,5 +1,5 @@
 <template>
-  <div class="projects-view">
+  <div class="projects-view">  
     <h1>Projects</h1>
 
     <!-- Button to toggle the Create Project form -->

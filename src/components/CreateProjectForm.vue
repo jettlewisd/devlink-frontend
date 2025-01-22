@@ -35,8 +35,17 @@
             v-model="endDate"
         />
 
+        <!-- Created By input (User ID) -->
+        <label for="createdBy">Your User ID:</label>
+        <input 
+            type="number"
+            id="created-by"
+            v-model.number="createdBy"
+            placeholder="Enter your user ID"
+        />
+
         <!-- Submit Button -->
-        <button @click="submitProject">Create Project</button>
+        <button @click="submitProject" :disabled="!isFormValid">Create Project</button>
     </div>
 </template>
 
@@ -50,13 +59,29 @@ export default {
             projectDescription: "",
             startDate: "",
             endDate: "",
+            createdBy: null, // Added createdBy field
         };
     },
+
+    computed: {
+    isFormValid() {
+        return (
+            this.projectName.trim() !== "" &&
+            this.projectDescription.trim() !== "" &&
+            this.createdBy
+            );
+        },
+    },
+
 
     methods: {
         submitProject() {
             // Validate the form input
-            if (this.projectName.trim() === "" || this.projectDescription.trim() === "") {
+            if (
+                this.projectName.trim() === "" ||
+                this.projectDescription.trim() === "" ||
+                !this.createdBy
+            ) {
                 alert("Please fill out all fields.");
                 return;
             }
@@ -67,6 +92,7 @@ export default {
                 description: this.projectDescription,
                 startDate: this.startDate,
                 endDate: this.endDate,
+                createdBy: this.createdBy, // Include createdBy from the form
             };
 
             // Dispatch the action to Vuex to add the project
@@ -77,6 +103,7 @@ export default {
             this.projectDescription = "";
             this.startDate = "";
             this.endDate = "";
+            this.createdBy = null;
         },
     },
 };
