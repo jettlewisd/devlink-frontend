@@ -18,7 +18,19 @@ const actions = {
             console.error("Error fetching users:", error);  // handle any errors during the request
         }
     },
+
+    async fetchUserById({ commit }, id) {
+        try {
+            const response = await api.get(`/users/${id}`);  // API call to fetch a single user
+            commit('setSelectedUser', response.data);  // commit the data to the store
+        } catch (error) {
+            console.error('Error fetching user by ID:', error);  // handle any errors during the request
+            throw error;  // rethrow for the component to handle
+        }
+    }
 };
+
+
 
 const mutations = {
     setUsers(state, users) {
