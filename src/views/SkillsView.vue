@@ -15,11 +15,11 @@
   <script>
   import AppHeader from "@/components/AppHeader.vue";
   import AppFooter from "@/components/AppFooter.vue";
-  import AddSkillForm from "@/components/AddSkillForm.vue";
+  // import AddSkillForm from "@/components/AddSkillForm.vue";
   
   export default {
     name: "SkillsView",
-    components: { AppHeader, AppFooter, AddSkillForm },
+    components: { AppHeader, AppFooter},
   };
   </script>
   
