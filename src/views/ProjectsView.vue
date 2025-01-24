@@ -7,7 +7,7 @@
       Create Project
     </button>
 
-    <!-- Conditionally render the CreateProjectForm -->
+    <!-- Conditionally render the CreateProjectForm --> 
     <CreateProjectForm v-if="isCreateFormVisible" />
 
     <!-- Pass 'projects' to the ProjectList component -->

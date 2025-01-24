@@ -23,7 +23,7 @@ const actions = {
             console.error('Error fetching projects:', error);
         } finally {
             commit('setLoading', false);
-        }
+        }   
     },
     
 
