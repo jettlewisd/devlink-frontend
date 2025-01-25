@@ -1,5 +1,6 @@
 import UserService from '@/services/UserService';
 
+
 const state = {
     users: [],               // Stores the list of all users
     selectedUser: null,      // Stores the currently selected user
@@ -9,6 +10,18 @@ const state = {
 const getters = {
     allUsers: (state) => state.users,               // Retrieve all users
     selectedUser: (state) => state.selectedUser,    // Retrieve the selected user
+};
+
+const mutations = {
+    setUsers(state, users) {
+        state.users = users; // Update the users array in the state
+    },
+    setSelectedUser(state, user) {
+        state.selectedUser = user; // Update the selected user in the state
+    },
+    setLoading(state, loading) {
+        state.loading = loading; // Update the loading state
+    },
 };
 
 const actions = {
@@ -106,17 +119,6 @@ const actions = {
     },
 };
 
-const mutations = {
-    setUsers(state, users) {
-        state.users = users; // Update the users array in the state
-    },
-    setSelectedUser(state, user) {
-        state.selectedUser = user; // Update the selected user in the state
-    },
-    setLoading(state, isLoading) {
-        state.loading = isLoading; // Update the loading state
-    },
-};
 
 export default {
     namespaced: true,

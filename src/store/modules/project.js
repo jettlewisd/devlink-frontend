@@ -1,5 +1,6 @@
 import ProjectService from '@/services/ProjectService';
 
+
 const state = {
     projects: [],          // Stores the list of all projects
     selectedProject: null, // Stores the currently selected project
@@ -9,6 +10,18 @@ const state = {
 const getters = {
     allProjects: (state) => state.projects,          // Retrieve all projects
     selectedProject: (state) => state.selectedProject, // Retrieve the selected project
+};
+
+const mutations = {
+    setProjects(state, projects) {
+        state.projects = projects; // Update the projects array in the state
+    },
+    setSelectedProject(state, project) {
+        state.selectedProject = project; // Update the selected project in the state
+    },
+    setLoading(state, loading) {
+        state.loading = loading; // Update the loading state
+    },
 };
 
 const actions = {
@@ -26,7 +39,6 @@ const actions = {
         }   
     },
     
-
     // Fetch a single project by ID
     async fetchProjectById({ commit }, id) {
         try {
@@ -84,17 +96,6 @@ const actions = {
     },
 };
 
-const mutations = {
-    setProjects(state, projects) {
-        state.projects = projects; // Update the projects array in the state
-    },
-    setSelectedProject(state, project) {
-        state.selectedProject = project; // Update the selected project in the state
-    },
-    setLoading(state, isLoading) {
-        state.loading = isLoading; // Update the loading state
-    },
-};
 
 export default {
     namespaced: true,
