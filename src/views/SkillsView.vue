@@ -1,6 +1,5 @@
 <template>
     <div>
-      <AppHeader />
 
       <main>
         <h1>Manage Skills</h1>
@@ -8,18 +7,16 @@
         <AddSkillForm />
       </main>
       
-      <AppFooter />
     </div>
   </template>
   
   <script>
-  import AppHeader from "@/components/AppHeader.vue";
-  import AppFooter from "@/components/AppFooter.vue";
-  // import AddSkillForm from "@/components/AddSkillForm.vue";
+  import AddSkillForm from "@/components/AddSkillForm.vue";
+  import SkillsList from "@/components/SkillList.vue";
   
   export default {
     name: "SkillsView",
-    components: { AppHeader, AppFooter},
+    components: { SkillsList, AddSkillForm },
   };
   </script>
   

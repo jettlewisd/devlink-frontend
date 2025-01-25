@@ -5,13 +5,14 @@ const state = {
     skills: [],
     selectedSkill: null,
     selectedSkills: null,
-    loading: false,
+    userHasSkill: null,  // New state for storing the boolean result of userHasSkill
 }
 
 const getters = {
     allSKills: (state) => state.skills, // get all skills 
     getSelectedSkill: (state) => state.selectedSkill, // get selected skill 
-    getSelectedSkills: (state) => state.selectedSkills // get selected skill(s)
+    getSelectedSkills: (state) => state.selectedSkills, // get selected skill(s)
+    getUserHasSkill: (state) => state.userHasSkill, // get userHasSkill
 };
 
 const mutations = {
@@ -23,6 +24,9 @@ const mutations = {
     },
     setSelectedSkills(state, selectedSkills) {
         state.selectedSkills = selectedSkills;
+    },
+    setUserHasSkill(state, userHasSkill) {
+        state.userHasSkill = userHasSkill;
     },
     setLoading(state, loading) {
         state.loading = loading;
@@ -104,7 +108,39 @@ const actions = {
         }
     },
 
-    async fetc
+    async fetchSkillsByProficiency({commit}, proficiencyLevel) {
+        try {
+            commit('setLoading', true);
+            const response = await SKillService.fetchSkillsByProficiency(proficiencyLevel);
+            console.log('API response:', response.data);
+            commit('setSkills', response.data);
+        } catch (error) {
+            console.log('Error fetching skills by proficiency level', error);
+            throw error;
+        } finally {
+            commit('setLoading', false);
+        }
+    },
 
-    
+    async userHasSkill({commit}, {userId, skillName}) {
+        try {
+            commit('setLoading', true);
+            const response = await SKillService.userHasSkill(userId, skillName);
+            console.log('API response:', response.data);
+            commit('userHasSkill', response.data);
+        } catch (error) {
+            console.log('Error fetching skill by User ID and skill name', error);
+            throw error;
+        } finally {
+            commit('setLoading', false);
+        }
+    }
+};
+
+export default {
+    namespaced: true,
+    state,
+    getters,
+    mutations,
+    actions,
 };
