@@ -1,0 +1,81 @@
+<template>
+    <form @submit.prevent="submitSkill">
+      <div>
+        <label for="skillName">Skill Name</label>
+        <input type="text" v-model="skill.skillName" id="skillName" required />
+      </div>
+  
+      <div>
+        <label for="proficiencyLevel">Proficiency Level</label>
+        <input type="text" v-model="skill.proficiencyLevel" id="proficiencyLevel" required />
+      </div>
+  
+      <div>
+        <label for="userId">User ID</label>
+        <input type="number" v-model="skill.userId" id="userId" required />
+      </div>
+  
+      <button type="submit">Add Skill</button>
+    </form>
+  </template>
+  
+  <script>
+  export default {
+    data() {
+      return {
+        skill: {
+          skillName: '',
+          proficiencyLevel: '',
+          userId: null // Added User ID
+        }
+      };
+    },
+    methods: {
+      submitSkill() {
+        // Dispatch the action to create the skill, passing the skill data
+        this.$store.dispatch('skill/createSkill', this.skill);
+        
+        // Reset form after submission
+        this.skill = { skillName: '', proficiencyLevel: '', userId: null };
+      }
+    }
+  };
+  </script>
+  
+  <style scoped>
+  form {
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+  }
+  
+  input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  button {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  </style>
+  

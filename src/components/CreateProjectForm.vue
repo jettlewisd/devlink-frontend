@@ -9,7 +9,7 @@
             id="project-name"
             v-model="projectName"
             placeholder="Enter project name"
-        />
+        /> 
 
         <!-- Project Description input -->    
         <label for="projectDescription">Project Description:</label>

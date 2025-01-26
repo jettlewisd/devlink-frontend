@@ -24,9 +24,15 @@
   
   <script>
   export default {
+    name: 'SkillsList',
+
     props: {
-      skills: Array // Accepts an array of skills as a prop
+      skills: {
+        type: Array,
+        required: true, // Accepts an array of skills as a prop
+      },
     },
+
     methods: {
       // Format proficiency to display more clearly (e.g., Beginner, Intermediate, Advanced)
       formatProficiency(proficiency) {
@@ -37,7 +43,7 @@
         };
         return proficiencyLevels[proficiency] || 'Unknown'; // Default to 'Unknown' if proficiency level is not found
       }
-    }
+    },
   };
   </script>
   
