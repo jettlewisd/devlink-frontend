@@ -82,6 +82,8 @@ const actions = {
   async createSkill({ commit }, skill) {
     try {
       const response = await SkillService.createSkill(skill);
+      console.log('Backend Response:', response); // Log full response
+      console.log('Response Data:', response.data); // Log backend data
       commit('addSkill', response.data);  // Add the new skill to the Vuex store
     } catch (error) {
       console.log('Error creating skill:', error);
