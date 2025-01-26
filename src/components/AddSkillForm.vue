@@ -2,17 +2,35 @@
     <form @submit.prevent="submitSkill">
       <div>
         <label for="skillName">Skill Name</label>
-        <input type="text" v-model="skill.skillName" id="skillName" required />
+        <input 
+          type="text" 
+          v-model="skill.skillName" 
+          id="skillName" 
+          required 
+          placeholder="Enter the skill name"
+        />
       </div>
   
       <div>
         <label for="proficiencyLevel">Proficiency Level</label>
-        <input type="text" v-model="skill.proficiencyLevel" id="proficiencyLevel" required />
+        <input 
+          type="text" 
+          v-model="skill.proficiencyLevel" 
+          id="proficiencyLevel" 
+          required 
+          placeholder="Enter proficiency level (e.g., Beginner, Expert)"
+        />
       </div>
   
       <div>
         <label for="userId">User ID</label>
-        <input type="number" v-model="skill.userId" id="userId" required />
+        <input 
+          type="number" 
+          v-model="skill.userId" 
+          id="userId" 
+          required 
+          placeholder="Enter your user ID"
+        />
       </div>
   
       <button type="submit">Add Skill</button>
@@ -26,7 +44,7 @@
         skill: {
           skillName: '',
           proficiencyLevel: '',
-          userId: null // Added User ID
+          userId: null, // Added User ID
         }
       };
     },
