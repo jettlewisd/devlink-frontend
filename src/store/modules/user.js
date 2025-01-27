@@ -5,6 +5,8 @@ const state = {
     users: [],               // Stores the list of all users
     selectedUser: null,      // Stores the currently selected user
     loading: false,          // Tracks the loading state
+    userError: null, // State to store the error message
+
 };
 
 const getters = {
@@ -21,6 +23,9 @@ const mutations = {
     },
     setLoading(state, loading) {
         state.loading = loading; // Update the loading state
+    },
+    setUserError(state, errorMessage) {
+        state.userError = errorMessage; // Set the error message in the state
     },
 };
 
@@ -45,9 +50,16 @@ const actions = {
         try {
             const response = await UserService.fetchUserById(id);
             commit('setSelectedUser', response.data); // Commit the fetched user to the state
+            commit('setUserError', null); // Clear any previous errors
+
         } catch (error) {
             console.error('Error fetching user by ID:', error);
-            throw error; // Optional: rethrow for the component to handle
+            
+            commit('setSelectedUser', null);
+            commit('setUserError', 'User ID is invalid'); // Set error message when user not found
+
+
+            // throw error; // Optional: rethrow for the component to handle
         }
     },
 

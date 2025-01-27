@@ -1,6 +1,5 @@
 <template>
     <div class="project-list">
-      <h2>Projects</h2>
   
       <!-- Check if there are projects to display -->
       <div v-if="projects.length > 0">

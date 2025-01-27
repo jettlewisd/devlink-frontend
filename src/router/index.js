@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router';
 
 import HomeView from '@/views/HomeView.vue';
-import ProfileView from '@/views/ProfileView.vue';
+import ProfileView from '@/views/ProfileView.vue'; 
 import ProjectsView from '@/views/ProjectsView.vue';
 // import ConnectionsView from '@/views/ConnectionsView.vue';
 import SkillsView from '@/views/SkillsView.vue';
@@ -12,7 +12,7 @@ import NotFoundView from '@/views/NotFoundView.vue';
 
 const routes = [
   { path: '/', name: 'home', component: HomeView },
-  { path: '/profile/:id', name: 'profile', component: ProfileView },
+  { path: '/profile', name: 'profile', component: ProfileView },
   { path: '/projects', name: 'projects', component: ProjectsView },
   // { path: '/connections', name: 'connections', component: ConnectionsView },
   { path: '/skills', name: 'skills', component: SkillsView },
