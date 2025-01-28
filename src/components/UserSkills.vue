@@ -21,7 +21,7 @@
 
     computed: {
         selectedSkills() {
-            return this.$store.state.skills.selectedSkills || []; // Default to empty array
+            return this.$store.state.skill.selectedSkills || []; // Default to empty array
         }
         //loading() {
           //  console.log('Loading state:', this.$store.state.skill.loading);  !!--loading feature tabled for now until i can debug it.
@@ -51,7 +51,8 @@
 
 
     created() {
-      if (this.selectedUser) {
+      if (this.selectedUser && this.selectedUser.id) {
+        console.log('Fetching skills for user ID:', this.selectedUser.id);
         this.fetchSkillsByUserId(this.selectedUser.id);
       }
     },

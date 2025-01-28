@@ -3,13 +3,17 @@ import ProjectService from '@/services/ProjectService';
 
 const state = {
     projects: [],          // Stores the list of all projects
-    selectedProject: null, // Stores the currently selected project
+    selectedProject: null,
+    selectedProjects: [],
+    userHasProject: null, 
     loading: false,        // Tracks the loading state
 };
 
 const getters = {
     allProjects: (state) => state.projects,          // Retrieve all projects
     selectedProject: (state) => state.selectedProject, // Retrieve the selected project
+    selectedProjects: (state) => state.selectedProjects, // Retrieve the selected project(s)
+    userHasProject: (state) => state.userHasProject, // Retrieve the userHasProject 
 };
 
 const mutations = {
