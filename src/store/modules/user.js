@@ -2,7 +2,7 @@ import UserService from '@/services/UserService';
 
 
 const state = {
-    users: [],               // Stores the list of all users
+    users: [],               // Stores the list of all users 
     selectedUser: null,      // Stores the currently selected user
     loading: false,          // Tracks the loading state
     userError: null, // State to store the error message

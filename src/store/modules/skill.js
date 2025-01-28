@@ -67,7 +67,7 @@ const actions = {
 
   async fetchSkillsByUserId({ commit }, userId) {
     try {
-      commit('setLoading', true);
+      // commit('setLoading', true);
       const response = await SkillService.fetchSkillsByUserId(userId);
       console.log('API response:', response.data);
       commit('setSelectedSkills', response.data);
@@ -75,7 +75,7 @@ const actions = {
       console.log('Error fetching skills by User ID', error);
       throw error;
     } finally {
-      commit('setLoading', false);
+      // commit('setLoading', false);
     }
   },
 

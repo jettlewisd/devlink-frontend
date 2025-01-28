@@ -2,8 +2,8 @@
     <div v-if="selectedUser">
       <h3 class="section-title">User Skills</h3>
       <!-- <div v-if="loading">Loading...</div>    feature disabled for now until i can debug it. -->
-      <ul v-if="userSkills.length > 0">
-        <li v-for="(skill, index) in userSkills" :key="index" class="skill-item">
+      <ul v-if="selectedSkills.length > 0">
+        <li v-for="(skill, index) in selectedSkills" :key="index" class="skill-item">
           <span class="skill-name">{{ skill.skillName }}</span>
           <span class="skill-level">({{ skill.proficiencyLevel }})</span>
         </li>
@@ -20,7 +20,7 @@
     },
 
     computed: {
-        userSkills() {
+        selectedSkills() {
             return this.$store.state.skills.selectedSkills || []; // Default to empty array
         }
         //loading() {
@@ -30,22 +30,25 @@
     },
 
     watch: {
-      selectedUser(newVal, oldVal) {
-        if (newVal && newVal !== oldVal) {
-          this.fetchSkillsByUserId(newVal.id);
-        }
-      },
+        selectedUser(newVal, oldVal) {
+            if (newVal && newVal.id && newVal !== oldVal) {
+                this.fetchSkillsByUserId(newVal.id);
+            }
+        },
     },
 
+
     methods: {
-      async fetchSkillsByUserId(userId) {
-        try {
-          await this.$store.dispatch('skill/fetchSkillsByUserId', userId); 
-        } catch (error) {
-          console.error('Error fetching skills:', error);
-        }
-      },
+        async fetchSkillsByUserId(userId) {
+            try {
+                console.log('Fetching skills for user ID:', userId);
+                await this.$store.dispatch('skill/fetchSkillsByUserId', userId);
+            } catch (error) {
+                console.error('Error fetching skills:', error);
+            }
+        },
     },
+
 
     created() {
       if (this.selectedUser) {
