@@ -11,7 +11,7 @@ const SkillService = {
     },
 
     fetchSkillsByUserId(userId) {
-        return api.get(`/skills/${userId}`); // NOTE: use backticks in the param when performing interpolation 
+        return api.get(`/skills/users/${userId}`); // NOTE: use backticks on the path when performing interpolation 
     },
 
     createSkill(skill) {

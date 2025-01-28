@@ -3,7 +3,7 @@
   
       <!-- Check if there are projects to display -->
       <div v-if="projects.length > 0">
-        <!-- Loop through each project and display a ProjectCard -->
+        <!-- Loop through each project and display a ProjectCard -->                  
         <ProjectCard
           v-for="project in projects"
           :key="project.id"

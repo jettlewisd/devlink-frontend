@@ -6,7 +6,7 @@
       <p><strong>End Date:</strong> {{ project.endDate }}</p>
       <p><strong>Created by (User ID):</strong> {{ project.createdBy }}</p>
     </div>
-  </template>
+  </template> 
   
   <script>
   export default {

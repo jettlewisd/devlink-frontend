@@ -3,7 +3,7 @@ import SkillService from '@/services/SkillService';
 const state = {
   skills: [],
   selectedSkill: null,
-  selectedSkills: null,
+  selectedSkills: [], // New state for storing the selected skills 
   userHasSkill: null,  // New state for storing the boolean result of userHasSkill
   loading: false, // Added loading state to track API request status
 };
