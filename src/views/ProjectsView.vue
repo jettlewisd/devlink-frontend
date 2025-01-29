@@ -52,28 +52,34 @@ export default {
 
 <style scoped>
 .projects-view {
-  padding: 16px;
-  background-color: #f4f4f4;
+  padding: 2rem;
+  background-color: #1e2a47; /* Deep blue background to match the theme */
+  color: #ecf0f1; /* Light text for contrast */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Consistent font */
 }
 
 .create-project-btn {
-  background-color: #007bff;
+  background-color: #c39e29; /* Maze yellow button */
   color: white;
-  padding: 10px 16px;
+  padding: 12px 20px;
   border: none;
-  border-radius: 4px;
+  border-radius: 5px;
   cursor: pointer;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transitions */
 }
 
 .create-project-btn:hover {
-  background-color: #0056b3;
+  background-color: #f1c40f; /* Lighter yellow on hover */
+  transform: scale(1.05); /* Slight scaling effect on hover */
 }
 
 h1 {
-  font-size: 2rem;
-  color: #333;
+  font-size: 2.5rem;
+  color: #f4f4f4; /* Light color for the heading */
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
+
 </style>
