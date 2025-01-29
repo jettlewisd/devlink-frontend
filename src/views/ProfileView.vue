@@ -34,7 +34,7 @@ export default {
       userId: '',
     };
   },
-  computed: {
+  computed: { 
     selectedUser() {
       return this.$store.state.user.selectedUser;
     },

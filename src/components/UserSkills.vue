@@ -1,6 +1,6 @@
 <template>
     <div v-if="selectedUser">
-      <h3 class="section-title">User Skills</h3>
+      <h3 class="section-title">User Skills:</h3>
       <ul v-if="selectedSkills.length > 0">
         <li v-for="(skill, index) in selectedSkills" :key="index" class="skill-item">
           <span class="skill-name">{{ skill.skillName }}</span>

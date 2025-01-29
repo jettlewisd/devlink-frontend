@@ -1,6 +1,6 @@
 <template>
     <div v-if="selectedUser">
-      <h3 class="section-title">User Projects</h3>
+      <h3 class="section-title">User Projects:</h3>
       <ul v-if="selectedProjects.length > 0">
         <li v-for="(project, index) in selectedProjects" :key="index" class="project-item">
           <div class="project-name">{{ project.name }}</div>

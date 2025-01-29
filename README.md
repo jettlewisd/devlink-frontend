@@ -4,7 +4,7 @@
 
 # DevLink - Frontend
 
-DevLink is a web application that facilitates project collaboration. This frontend portion is built with Vue.js, Vuex for state management, and Axios for API calls. It provides users with the ability to interact with projects, contribute to them, and manage their skills, connections, and posts.
+DevLink is a growing web application that facilitates project collaboration. This frontend portion is built with Vue.js, Vuex for state management, and Axios for API calls. It provides users with the ability to interact with projects, contribute to them, and manage their skills, connections, and posts.
 
 ## Table of Contents
 
@@ -19,7 +19,8 @@ DevLink is a web application that facilitates project collaboration. This fronte
 
 ## Overview
 
-DevLink allows users to create projects, view existing projects, and interact with project details. It communicates with a backend API using Axios, while Vuex manages the application's state.
+DevLink is a platform for developers to showcase their skills, connect with others, and collaborate on projects.
+Build your profile, list your expertise, and find like-minded professionals to grow your network.
 
 ## Entities
 

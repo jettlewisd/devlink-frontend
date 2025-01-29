@@ -3,28 +3,24 @@
      
 
       <section class="main-content">
+
         <h1>Welcome to DevLink</h1>
-  
-        <!-- Placeholder for ProjectList -->
-        <ProjectList :projects="projects" @view-project-details="handleViewDetails" />
-  
-        <!-- Placeholder for UserList -->
-        <UserList :users="users" @view-user-profile="handleViewProfile" />
+        <p>DevLink is a platform for developers to showcase their skills, connect with others, and collaborate on projects.
+           Build your profile, list your expertise, and find like-minded professionals to grow your network.</p>
+        <p>This app was built using Vue.js for the frontend, Spring Boot with Java for the backend, 
+          PostgreSQL for the database, and Axios for API communication. Upcoming features include user 
+          authentication, connections, and posting capabilities!</p>
+
       </section>
   
     </div>
   </template>
   
   <script>
-  import ProjectList from '../components/ProjectList.vue';
-  import UserList from '../components/UserList.vue';
   
   export default {
     name: 'HomeView',
-    components: {
-      ProjectList,
-      UserList
-    },
+    
     computed: {
       projects() {
         return this.$store.state.project.projects; // Get the list of projects from Vuex store
