@@ -25,20 +25,17 @@
 <script>
 export default {
   name: "ProjectCard",
-
   props: {
     project: {
       type: Object,
       required: true,
     },
   },
-
   data() {
     return {
       showDetails: false, // Track whether the details are shown or not
     };
   },
-
   methods: {
     formatDate(date) {
       if (!date) return "N/A";
@@ -52,60 +49,98 @@ export default {
 </script>
 
 <style scoped>
-/* ---------------------
-   Card Container Styling
---------------------- */
+/* Importing Poppins font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+/* Deep Blue, Grey, and Maze Yellow Theme */
 .project-card {
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 16px;
-  margin: 16px 0;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  background-color: #fff;
+  background: linear-gradient(145deg, #2f3b53, #1f2738); /* Dark grey/blue gradient */
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  padding: 20px;
+  margin: 20px 0;
+  font-family: 'Poppins', sans-serif;
+  color: #e0e0e0; /* Light grey text */
+  width: 100%;
+  max-width: 600px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect */
+.project-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
 }
 
 /* ---------------------
    Project Title Styling
 --------------------- */
 .project-title {
-  font-size: 1.5rem;
-  margin-bottom: 8px;
-  color: #333;
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #c39e29; /* Maze Yellow */
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  letter-spacing: 1px;
 }
 
 /* ---------------------------
    Project Description Styling
 --------------------------- */
 .project-description {
-  font-size: 1rem;
-  margin-bottom: 16px;
-  color: #555;
+  font-size: 1.2rem;
+  line-height: 1.5;
+  margin-bottom: 12px;
+  color: #d1d1d1; /* Light grey */
 }
 
 /* -------------------------
    Project Dates Styling
 ------------------------- */
 .project-dates p {
-  font-size: 0.9rem;
-  margin: 4px 0;
-  color: #777;
+  font-size: 1rem;
+  margin: 6px 0;
+  color: #b0b0b0; /* Soft grey */
 }
 
 /* ---------------------------
    View Details Button Styling
 --------------------------- */
 .view-details-btn {
-  background-color: #4CAF50;
-  color: white;
+  background-color: #c39e29; /* Maze Yellow */
+  color: #031d44; /* Deep Blue */
+  font-weight: 600;
+  padding: 10px 16px;
   border: none;
-  padding: 8px 16px;
-  border-radius: 4px;
+  border-radius: 6px;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: background 0.3s ease;
+  font-size: 1rem;
+  margin-top: 10px;
 }
 
-/* Hover state for the button */
 .view-details-btn:hover {
-  background-color: #45a049;
+  background-color: #e4c23d; /* Brighter yellow */
+}
+
+/* Responsiveness for Mobile */
+@media (max-width: 768px) {
+  .project-card {
+    padding: 16px;
+    max-width: 100%;
+  }
+
+  .project-title {
+    font-size: 1.5rem;
+  }
+
+  .project-description {
+    font-size: 1rem;
+  }
+
+  .view-details-btn {
+    font-size: 0.9rem;
+    padding: 8px 14px;
+  }
 }
 </style>

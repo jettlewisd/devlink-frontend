@@ -53,9 +53,9 @@ export default {
 <style scoped>
 .projects-view {
   padding: 2rem;
-  background-color: #1e2a47; /* Deep blue background to match the theme */
-  color: #ecf0f1; /* Light text for contrast */
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Consistent font */
+  background-color: #031d44; /* Deep blue background to match HomeView */
+  color: #e0e0e0; /* Light grey text for readability */
+  font-family: 'Poppins', sans-serif; /* Consistent font */
 }
 
 .create-project-btn {
@@ -77,7 +77,7 @@ export default {
 
 h1 {
   font-size: 2.5rem;
-  color: #f4f4f4; /* Light color for the heading */
+  color: #f4f4f4; /* Lighter color for the heading */
   text-align: center;
   margin-bottom: 30px;
 }
