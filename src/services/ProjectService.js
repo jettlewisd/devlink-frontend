@@ -28,7 +28,7 @@ const ProjectsService = {
 
   // Fetch projects created by a specific user
   fetchProjectsByCreator(createdBy) {
-    return api.get(`/projects/${createdBy}`); // GET /projects/{createdBy}
+    return api.get(`/projects/createdBy/${createdBy}`); // GET /projects/{createdy}
   },
 };
 

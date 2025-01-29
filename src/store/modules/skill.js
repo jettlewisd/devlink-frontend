@@ -67,7 +67,6 @@ const actions = {
 
   async fetchSkillsByUserId({ commit }, userId) {
     try {
-      // commit('setLoading', true);
       const response = await SkillService.fetchSkillsByUserId(userId);
       console.log('API response:', response.data);
       commit('setSelectedSkills', response.data);

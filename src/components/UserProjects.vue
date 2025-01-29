@@ -1,8 +1,8 @@
 <template>
     <div v-if="selectedUser">
       <h3 class="section-title">User Projects</h3>
-      <ul v-if="selectedUser.projects && selectedUser.projects.length > 0">
-        <li v-for="(project, index) in selectedUser.projects" :key="index" class="project-item">
+      <ul v-if="selectedProjects.length > 0">
+        <li v-for="(project, index) in selectedProjects" :key="index" class="project-item">
           <div class="project-name">{{ project.name }}</div>
           <div class="project-description">{{ project.description }}</div>
           <div class="project-dates">
@@ -15,26 +15,60 @@
     </div>
   </template>
   
-  <script>
 
+
+
+  <script>
   export default {
+
     props: {
-      selectedUser: {
-        type: Object,
-        required: true,
+      selectedUser: Object,
+      },
+
+    computed: {
+      selectedProjects() {
+        return this.$store.state.project.selectedProjects || [];
       },
     },
 
+    watch: {
+        selectedUser(newVal, oldVal) {
+            if (newVal && newVal.id && newVal !== oldVal) {
+                this.fetchProjectsByCreator(newVal.id);
+            }
+        },
+    },
+
     methods: {
+
+        async fetchProjectsByCreator(createdBy) {
+            try {
+                console.log('Fetching projects for user ID:', createdBy);
+                await this.$store.dispatch('project/fetchProjectsByCreator', createdBy);
+            } catch (error) {
+                console.error('Error fetching projects:', error);
+            }
+        },
+
       formatDate(date) {
         const options = { year: 'numeric', month: 'long', day: 'numeric' };
         return new Date(date).toLocaleDateString(undefined, options);
       },
     },
-    
+
+    created() {
+      if (this.selectedUser && this.selectedUser.id) {
+        console.log('Fetching projects for user ID:', this.selectedUser.id);
+        this.fetchProjectsByCreator(this.selectedUser.id);
+      }
+    },
+
   };
   </script>
   
+
+
+
   <style scoped>
   .section-title {
     font-size: 1.5em;

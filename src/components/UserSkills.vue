@@ -1,7 +1,6 @@
 <template>
     <div v-if="selectedUser">
       <h3 class="section-title">User Skills</h3>
-      <!-- <div v-if="loading">Loading...</div>    feature disabled for now until i can debug it. -->
       <ul v-if="selectedSkills.length > 0">
         <li v-for="(skill, index) in selectedSkills" :key="index" class="skill-item">
           <span class="skill-name">{{ skill.skillName }}</span>
@@ -22,11 +21,7 @@
     computed: {
         selectedSkills() {
             return this.$store.state.skill.selectedSkills || []; // Default to empty array
-        }
-        //loading() {
-          //  console.log('Loading state:', this.$store.state.skill.loading);  !!--loading feature tabled for now until i can debug it.
-            //return this.$store.state.skills.loading; // Access loading state directly
-        //}
+        },
     },
 
     watch: {

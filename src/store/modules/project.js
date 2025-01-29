@@ -1,6 +1,5 @@
 import ProjectService from '@/services/ProjectService';
 
-
 const state = {
     projects: [],          // Stores the list of all projects
     selectedProject: null,
@@ -11,17 +10,23 @@ const state = {
 
 const getters = {
     allProjects: (state) => state.projects,          // Retrieve all projects
-    selectedProject: (state) => state.selectedProject, // Retrieve the selected project
-    selectedProjects: (state) => state.selectedProjects, // Retrieve the selected project(s)
-    userHasProject: (state) => state.userHasProject, // Retrieve the userHasProject 
+    getSelectedProject: (state) => state.selectedProject, // Retrieve the selected project
+    getSelectedProjects: (state) => state.selectedProjects, // Retrieve the selected project(s)
+    getUserHasProject: (state) => state.userHasProject, // Retrieve the userHasProject 
 };
 
 const mutations = {
     setProjects(state, projects) {
         state.projects = projects; // Update the projects array in the state
     },
-    setSelectedProject(state, project) {
-        state.selectedProject = project; // Update the selected project in the state
+    setSelectedProject(state, selectedProject) {
+        state.selectedProject = selectedProject; // Update the selected project in the state
+    },
+    setSelectedProjects(state, selectedProjects) {
+        state.selectedProjects = selectedProjects; // Update the selected projects in the state
+    },
+    setUserHasProject(state, userHasProject) {
+        state.userHasProject = userHasProject; // Update the userHasProject in the state
     },
     setLoading(state, loading) {
         state.loading = loading; // Update the loading state
@@ -91,8 +96,9 @@ const actions = {
     // Fetch projects by creator
     async fetchProjectsByCreator({ commit }, createdBy) {
         try {
-            const response = await ProjectService.fetchProjectsByCreator(createdBy); // Updated method name
-            commit('setProjects', response.data); // Commit the projects created by the user
+            const response = await ProjectService.fetchProjectsByCreator(createdBy);
+            console.log('API response:', response.data); // Check this log in the browser's console
+            commit('setSelectedProjects', response.data); // Commit the projects created by the user
         } catch (error) {
             console.error('Error fetching projects by creator:', error);
             throw error; // Optional: rethrow for the component to handle
