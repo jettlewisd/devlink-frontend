@@ -21,7 +21,7 @@ DevLink is a growing web application that facilitates project collaboration. Thi
 
 DevLink is a platform for developers to showcase their skills, connect with others, and collaborate on projects.
 Build your profile, list your expertise, and find like-minded professionals to grow your network.
-
+ 
 ## Entities
 
 These are the main entities in the application:
