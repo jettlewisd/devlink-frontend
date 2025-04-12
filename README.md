@@ -1,4 +1,3 @@
-# devlink-frontend
 
 
 
@@ -77,11 +76,12 @@ The frontend consists of reusable components that display information and intera
 3. **CreateProjectForm.vue**
    - A form to create a new project with fields for project details.
 
-4. **ProjectDetails.vue**
+4. **ProjectInfo.vue**
    - Displays detailed information about a specific project.
 
-5. **Navigation.vue**
-   - A navigation bar for routing between views.
+
+
+** Check the Components package to view all components.
 
 ## Views
 
@@ -90,11 +90,11 @@ The views are responsible for displaying entire pages. Each view typically corre
 1. **HomeView.vue**
    - The main page displaying a list of projects.
 
-2. **ProjectView.vue**
+2. **ProjectsView.vue**
    - Displays detailed information about a selected project.
 
-3. **CreateProjectView.vue**
-   - A page with the form to create a new project.
+3. **ProfileView.vue**
+   - A page to view the current user's profile.
 
 ## State Management (Vuex)
 
@@ -124,35 +124,7 @@ The frontend communicates with the backend using Axios to perform CRUD operation
 - `POST /projects`: Creates a new project.
 - `GET /projects/{id}`: Fetches details of a specific project.
 
-API calls are structured in separate service files located in the `src/services` folder, such as `projectService.js`.
-
-Example of a service file (`src/services/projectService.js`):
-
-```javascript
-import axios from 'axios';
-
-const API_URL = 'http://localhost:8081/api'; // Replace with your backend URL
-
-export default {
-  getProjects() {
-    return axios.get(`${API_URL}/projects`);
-  },
-
-  createProject(project) {
-    return axios.post(`${API_URL}/projects`, project);
-  },
-
-  getProjectById(projectId) {
-    return axios.get(`${API_URL}/projects/${projectId}`);
-  },
-};
-
-
-
-
-
-
-
+API calls are structured in separate service files located in the `src/services` folder, such as `ProjectService.js`.
 
 
 ## Project setup
@@ -175,5 +147,3 @@ npm run build
 npm run lint
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
