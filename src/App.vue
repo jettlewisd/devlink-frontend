@@ -1,12 +1,9 @@
 <template>
   <div id="app">
-    <!-- Optional Header -->
     <AppHeader />
     
-    <!-- Main Content: Routed Views -->
     <router-view />
 
-    <!-- Optional Footer -->
     <AppFooter />
   </div>
 </template>
@@ -24,6 +21,7 @@ export default {
 };
 </script>
 
-<style>
-/* You can add global styles here if needed */
+<style> 
+/* insert global styles here */
+
 </style>

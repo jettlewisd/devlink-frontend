@@ -44,7 +44,7 @@
         skill: {
           skillName: '',
           proficiencyLevel: '',
-          userId: null, // Added User ID
+          userId: null, 
         }
       };
     },

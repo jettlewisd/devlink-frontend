@@ -16,15 +16,15 @@ export default {
   name: 'HomeView',
   computed: {
     projects() {
-      return this.$store.state.project.projects; // Get the list of projects from Vuex store
+      return this.$store.state.project.projects; 
     },
     users() {
-      return this.$store.state.user.users; // Get the list of users from Vuex store
+      return this.$store.state.user.users; 
     }
   },
   mounted() {
     this.$store.dispatch('project/fetchProjects');
-    this.$store.dispatch("user/fetchUsers");  // Fetch users on component mount
+    this.$store.dispatch("user/fetchUsers");  
   },
   methods: {
     handleViewDetails(projectId) {
@@ -38,7 +38,6 @@ export default {
 </script>
 
 <style scoped>
-/* Importing Poppins font */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
 
 /* Deep Blue, Grey, and Maze Yellow Theme */
@@ -49,14 +48,14 @@ export default {
   background-color: #031d44; /* Deep Blue background */
   min-height: 100vh;
   padding: 3rem 1.5rem;
-  font-family: 'Poppins', sans-serif; /* Changed font to Poppins */
-  color: #e0e0e0; /* Light grey text */
+  font-family: 'Poppins', sans-serif; 
+  color: #e0e0e0;
 }
 
 .main-content {
   background: linear-gradient(145deg, #2f3b53, #1f2738); /* Dark grey/blue gradient */
   border-radius: 20px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4); /* Stronger shadow */
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4); 
   padding: 4rem 3rem;
   width: 100%;
   max-width: 900px;
@@ -75,7 +74,7 @@ h1 {
 
 p {
   font-size: 1.5rem;
-  color: #d1d1d1; /* Lighter grey for the body text */
+  color: #d1d1d1; 
   line-height: 1.6;
   margin-bottom: 1.5rem;
   max-width: 800px;
@@ -88,13 +87,13 @@ p:last-of-type {
 }
 
 a {
-  color: #c39e29; /* Maze Yellow for links */
+  color: #c39e29; 
   font-weight: 500;
   transition: color 0.3s ease;
 }
 
 a:hover {
-  color: #e4c23d; /* Slightly brighter yellow on hover */
+  color: #e4c23d; 
   text-decoration: underline;
 }
 

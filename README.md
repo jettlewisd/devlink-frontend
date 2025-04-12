@@ -80,7 +80,6 @@ The frontend consists of reusable components that display information and intera
    - Displays detailed information about a specific project.
 
 
-
 ** Check the Components package to view all components.
 
 ## Views
@@ -88,7 +87,7 @@ The frontend consists of reusable components that display information and intera
 The views are responsible for displaying entire pages. Each view typically corresponds to a specific route in the app.
 
 1. **HomeView.vue**
-   - The main page displaying a list of projects.
+   - The main page.
 
 2. **ProjectsView.vue**
    - Displays detailed information about a selected project.
@@ -96,23 +95,8 @@ The views are responsible for displaying entire pages. Each view typically corre
 3. **ProfileView.vue**
    - A page to view the current user's profile.
 
-## State Management (Vuex)
+** View the Views package to view all views!
 
-Vuex is used for managing the application's state. The main state includes:
-
-1. **projects**: List of all projects.
-2. **currentUser**: Information about the logged-in user (if applicable).
-
-Vuex has the following actions and mutations:
-
-- **Actions**:
-  - `fetchProjects`: Fetches the list of projects.
-  - `createProject`: Sends a request to create a new project.
-  - `fetchProjectById`: Fetches details for a specific project.
-
-- **Mutations**:
-  - `setProjects`: Updates the list of projects.
-  - `setCurrentUser`: Sets the current user in the state (optional if authentication is used).
 
 ## API Integration
 
@@ -125,6 +109,8 @@ The frontend communicates with the backend using Axios to perform CRUD operation
 - `GET /projects/{id}`: Fetches details of a specific project.
 
 API calls are structured in separate service files located in the `src/services` folder, such as `ProjectService.js`.
+
+Upcoming features for this project include testing and login capabilites to tailor the experience for the logged in user.
 
 
 ## Project setup
