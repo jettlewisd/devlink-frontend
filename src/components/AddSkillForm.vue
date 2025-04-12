@@ -60,40 +60,47 @@
   };
   </script>
   
+  
   <style scoped>
   form {
     max-width: 400px;
     margin: 20px auto;
     padding: 20px;
-    border: 1px solid #ccc;
+    border: 1px solid var(--secondary-color);
     border-radius: 8px;
+    background-color: var(--background-color);
   }
   
   label {
     display: block;
     margin-bottom: 8px;
     font-weight: bold;
+    color: var(--text-color);
   }
   
   input {
     width: 100%;
     padding: 8px;
     margin-bottom: 20px;
-    border: 1px solid #ccc;
+    border: 1px solid var(--secondary-color);
     border-radius: 4px;
+    background-color: white;
+    color: var(--text-color);
   }
   
   button {
     padding: 10px 20px;
-    background-color: #007BFF;
+    background-color: var(--primary-color);
     color: white;
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    transition: background-color 0.3s ease;
   }
   
   button:hover {
-    background-color: #0056b3;
+    background-color: #0f3f5f; 
   }
   </style>
+  
   
