@@ -37,44 +37,43 @@ export default {
 };
 </script>
 
+
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
 
-/* Deep Blue, Grey, and Maze Yellow Theme */
 .home-view {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #031d44; /* Deep Blue background */
+  background-color: var(--primary-bg-color); 
   min-height: 100vh;
   padding: 3rem 1.5rem;
-  font-family: 'Poppins', sans-serif; 
-  color: #e0e0e0;
+  font-family: 'Poppins', sans-serif;
+  color: var(--text-color); 
 }
 
 .main-content {
-  background: linear-gradient(145deg, #2f3b53, #1f2738); /* Dark grey/blue gradient */
+  background: linear-gradient(145deg, var(--secondary-bg-color), #1f2738);
   border-radius: 20px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4); 
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
   padding: 4rem 3rem;
   width: 100%;
   max-width: 900px;
-  margin-top: 100px;
+  margin-top: 25px;
   text-align: center;
 }
 
 h1 {
   font-size: 4rem;
   font-weight: 600;
-  color: #c39e29; /* Maze Yellow for heading to pop */
-  text-transform: uppercase;
+  color: var(--heading-color); 
   margin-bottom: 25px;
   letter-spacing: 2px;
 }
 
 p {
   font-size: 1.5rem;
-  color: #d1d1d1; 
+  color: var(--text-color); 
   line-height: 1.6;
   margin-bottom: 1.5rem;
   max-width: 800px;
@@ -87,17 +86,16 @@ p:last-of-type {
 }
 
 a {
-  color: #c39e29; 
+  color: var(--button-text-color); 
   font-weight: 500;
   transition: color 0.3s ease;
 }
 
 a:hover {
-  color: #e4c23d; 
+  color: var(--heading-color);
   text-decoration: underline;
 }
 
-/* Responsiveness for Mobile */
 @media (max-width: 768px) {
   .home-view {
     padding: 2rem;

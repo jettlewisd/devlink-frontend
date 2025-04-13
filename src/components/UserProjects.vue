@@ -63,71 +63,60 @@ export default {
 </script>
 
 <style scoped>
-/* Importing Poppins font */
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
-
 .section-title {
   font-size: 1.8rem;
   font-weight: 600;
-  color: #c39e29; /* Maze Yellow */
+  color: var(--heading-color);
   text-transform: uppercase;
   letter-spacing: 1px;
   margin-bottom: 1.2rem;
   font-family: "Poppins", sans-serif;
 }
 
-/* Styling for the project list */
 .project-list {
   list-style-type: none;
   padding: 0;
 }
 
-/* Project item styling */
 .project-item {
-  background: linear-gradient(145deg, #2f3b53, #1f2738); /* Dark grey/blue gradient */
+  background: var(--secondary-bg-color);
   border-radius: 12px;
   padding: 16px;
   margin-bottom: 12px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  color: #e0e0e0; /* Light grey text */
+  color: var(--text-color);
 }
 
-/* Hover effect */
 .project-item:hover {
   transform: scale(1.03);
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
 }
 
-/* Project name */
 .project-name {
   font-weight: 600;
   font-size: 1.4rem;
-  color: #c39e29; /* Maze Yellow */
+  color: var(--heading-color);
   margin-bottom: 6px;
 }
 
-/* Project description */
 .project-description {
   font-size: 1.1rem;
   color: #d1d1d1;
   margin-bottom: 6px;
 }
 
-/* Project dates */
 .project-dates {
   font-size: 1rem;
-  color: #b0b0b0; /* Soft grey */
+  color: #b0b0b0;
 }
 
-/* Dates */
 .start-date,
 .end-date {
   font-weight: 500;
   margin-right: 10px;
 }
 
-/* No projects message */
 .no-projects {
   font-style: italic;
   font-size: 1.1rem;

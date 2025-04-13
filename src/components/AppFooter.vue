@@ -1,6 +1,6 @@
 <template>
   <footer class="app-footer">
-    <div class="container">
+    <div class="container"> 
 
       <small>&copy;2025 DevLink, All Rights Reserved</small>
 
@@ -22,13 +22,14 @@ export default {
 };
 </script>
 
+
 <style scoped>
 .app-footer {
-  background-color: #1e2a47; /* Matching footer background to header */
-  color: #ecf0f1; /* Light text for contrast */
-  padding: 2rem 0; /* More padding for a spacious look */
+  background-color: var(--primary-color); /* Pure white background */
+  color: var(--text-color); /* Dark grey text for readability */
+  padding: 2rem 0;
   text-align: center;
-  box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow to add depth */
+  box-shadow: 0 -4px 15px var(--shadow-color); /* Subtle shadow */
 }
 
 .container {
@@ -43,24 +44,24 @@ export default {
   padding: 0;
   margin: 0;
   display: flex;
-  gap: 2rem; /* More space between items */
+  gap: 2rem;
 }
 
 .footer-nav a {
   text-decoration: none;
-  color: #bdc3c7; /* Lighter link color */
-  font-size: 1.1rem; /* Slightly larger font size */
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Consistent font */
-  transition: color 0.3s ease, transform 0.3s ease; /* Smooth hover transition */
+  color: var(--link-color); /* Bright blue for links */
+  font-size: 1.1rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .footer-nav a:hover {
-  color: #c39e29; /* Maze Yellow on hover */
-  transform: scale(1.05); /* Slight scaling effect on hover */
+  color: var(--hover-color); /* Lighter blue on hover */
+  transform: scale(1.05); /* Slight scale on hover */
 }
 
 small {
   font-size: 0.875rem;
-  color: #7f8c8d; /* Lighter color for copyright */
+  color: var(--copyright-color); /* Darker grey for copyright */
 }
 </style>

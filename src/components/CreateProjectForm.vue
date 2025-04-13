@@ -109,65 +109,64 @@
   </script>
   
   <style scoped>
-  .create-project-form {
-    background-color: #031d44; /* Deep blue background to match theme */
-    color: #e0e0e0; /* Light grey text for readability */
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    max-width: 500px;
-    margin: 0 auto;
-  }
-  
-  .create-project-form h3 {
-    font-size: 1.8rem;
-    margin-bottom: 20px;
-    color: #c39e29; /* Maze yellow for the heading */
-  }
-  
-  .create-project-form label {
-    display: block;
-    font-size: 1rem;
-    margin: 10px 0 4px;
-    color: #e0e0e0; /* Light grey for label text */
-  }
-  
-  .create-project-form input,
-  .create-project-form textarea {
-    width: 100%;
-    padding: 10px;
-    font-size: 1rem;
-    border-radius: 4px;
-    border: 1px solid #555; /* Darker border color */
-    margin-bottom: 20px;
-    box-sizing: border-box;
-  }
-  
-  .create-project-form input:focus,
-  .create-project-form textarea:focus {
-    border-color: #4CAF50;
-    outline: none;
-  }
-  
-  .create-project-form button {
-    width: 100%;
-    padding: 10px;
-    background-color: #c39e29;
-    color: #031d44;
-    font-size: 1.2rem;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  .create-project-form button:hover {
-    background-color: #45a049;
-  }
-  
-  .create-project-form button:disabled {
-    background-color: #ccc;
-    cursor: not-allowed;
-  }
-  </style>
-  
+.create-project-form {
+  background-color: var(--secondary-bg-color);
+  color: var(--heading-color);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.create-project-form h3 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: var(--nav-hover-color);
+}
+
+.create-project-form label {
+  display: block;
+  font-size: 1rem;
+  margin: 10px 0 4px;
+  color: var(--heading-color);
+}
+
+.create-project-form input,
+.create-project-form textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 4px;
+  border: 1px solid var(--border-color);
+  margin-bottom: 20px;
+  box-sizing: border-box;
+}
+
+.create-project-form input:focus,
+.create-project-form textarea:focus {
+  border-color: #4CAF50;
+  outline: none;
+}
+
+.create-project-form button {
+  width: 100%;
+  padding: 10px;
+  background-color: var(--button-bg-color);
+  color: var(--button-text-color);
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.create-project-form button:hover {
+  background-color: #45a049;
+}
+
+.create-project-form button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+</style>

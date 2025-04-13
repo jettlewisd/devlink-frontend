@@ -62,45 +62,46 @@
   
   
   <style scoped>
-  form {
-    max-width: 400px;
-    margin: 20px auto;
-    padding: 20px;
-    border: 1px solid var(--secondary-color);
-    border-radius: 8px;
-    background-color: var(--background-color);
-  }
-  
-  label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: bold;
-    color: var(--text-color);
-  }
-  
-  input {
-    width: 100%;
-    padding: 8px;
-    margin-bottom: 20px;
-    border: 1px solid var(--secondary-color);
-    border-radius: 4px;
-    background-color: white;
-    color: var(--text-color);
-  }
-  
-  button {
-    padding: 10px 20px;
-    background-color: var(--primary-color);
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  button:hover {
-    background-color: #0f3f5f; 
-  }
-  </style>
+form {
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  background-color: var(--secondary-bg-color);
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: var(--text-color);
+}
+
+input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 20px;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  background-color: var(--input-bg-color);
+  color: var(--input-text-color);
+}
+
+button {
+  padding: 10px 20px;
+  background-color: var(--button-bg-color);
+  color: var(--button-text-color);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0f3f5f;
+}
+</style>
+
   
   

@@ -43,36 +43,27 @@ export default {
   },
 };
 </script>
-
 <style scoped>
-/* -------------------------
-   Project List Container
-   ------------------------- */
-.project-list {
-  margin: 16px 0; /* Adds spacing around the component */
-  padding: 16px; /* Adds padding inside the container */
-  border-radius: 8px; /* Rounds the corners */
-  background-color: #031d44; /* Deep blue background to match the theme */
-  color: #e0e0e0; /* Light grey text for readability */
-}
+  .project-list {
+    margin: 16px 0;
+    padding: 16px;
+    border-radius: 8px;
+    background-color: var(--primary-bg-color);
+    color: var(--text-color);
+  }
 
-/* -------------------------
-   Heading Styling
-   ------------------------- */
-.project-list h2 {
-  font-size: 1.8rem; /* Larger font size for prominence */
-  color: #c39e29; /* Maze yellow for the heading */
-  margin-bottom: 16px; /* Adds spacing below the heading */
-  text-align: center; /* Centers the heading */
-}
+  .project-list h2 {
+    font-size: 1.8rem;
+    color: var(--button-bg-color);
+    margin-bottom: 16px;
+    text-align: center;
+  }
 
-/* -------------------------
-   No Projects Message
-   ------------------------- */
-.no-projects {
-  text-align: center; /* Centers the message text */
-  color: #777; /* Light gray text for subtle emphasis */
-  font-size: 1rem; /* Standard font size */
-  margin-top: 16px; /* Adds spacing above the message */
-}
+  .no-projects {
+    text-align: center;
+    color: #777;
+    font-size: 1rem;
+    margin-top: 16px;
+  }
 </style>
+

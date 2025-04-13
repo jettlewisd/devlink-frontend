@@ -28,7 +28,7 @@
   
   <style scoped>
   .project-info {
-    background-color: #f9f9f9;
+    background-color: var(--secondary-bg-color);
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
@@ -38,17 +38,16 @@
   .project-info h2 {
     font-size: 2rem;
     margin-bottom: 10px;
-    color: #333;
+    color: var(--heading-color);
   }
   
   .project-info p {
     font-size: 1rem;
     margin: 8px 0;
-    color: #555;
+    color: var(--text-color);
   }
   
   .project-info strong {
-    color: #333;
+    color: var(--heading-color);
   }
-  </style>
-  
+</style>

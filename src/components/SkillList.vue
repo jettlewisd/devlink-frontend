@@ -1,21 +1,16 @@
 <template>
   <div class="skills-list">
     <h2>Skills</h2>
-    
-    <!-- Check if there are skills to display -->
     <div v-if="skills.length > 0">
-      <!-- Loop through each skill and display its name and proficiency -->
       <ul>
         <li v-for="skill in skills" :key="skill.id">
           <div>
             <strong>{{ skill.skillName }}</strong> 
-            <span>Skill Level: {{ skill.proficiencyLevel }}</span> <!-- Display proficiencyLevel as "Skill Level: [proficiency]" -->
+            <span>Skill Level: {{ skill.proficiencyLevel }}</span>
           </div>
         </li>
       </ul>
     </div>
-    
-    <!-- Show a message if there are no skills -->
     <div v-else class="no-skills">
       <p>No skills to display.</p>
     </div>
@@ -29,7 +24,7 @@ export default {
   props: {
     skills: {
       type: Array,
-      required: true, // Accepts an array of skills as a prop
+      required: true,
     },
   },
 };
@@ -38,6 +33,11 @@ export default {
 <style scoped>
 .skills-list {
   padding: 20px;
+  border-radius: 8px;
+}
+
+.skills-list h2 {
+  color: var(--heading-color);
 }
 
 .no-skills {
@@ -47,6 +47,7 @@ export default {
 
 li {
   margin: 10px 0;
+  color: var(--text-color);
 }
 
 strong {
@@ -56,5 +57,6 @@ strong {
 span {
   margin-left: 10px;
   font-style: italic;
+  color: var(--text-color);
 }
 </style>
